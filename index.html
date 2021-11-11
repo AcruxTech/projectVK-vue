@@ -15,39 +15,14 @@
         <div class="yourmessage">Second message</div>
         <div class="yourmessage">Third message</div>
 
-        <div class="mymessage" v-for="message in messages">{{ message }}</div> <!-- Выводим все сообщения из массива-->
+        <messages :messages="messages"></messages>
 
         <input type="text" placeholder="Введите сообщение" v-model="newMessage">
         <input type="submit" v-on:click="addNewMessage">
     </div>
 
     <script src="https://unpkg.com/vue"></script>
-    <script>
-        /*
-            It's just a man.
-            He wishes you good luck.
-                (..)
-                /||\
-                 /\
-        */
-        var app = new Vue({
-            el: '#app',
-            data: {
-                messages: [                                     // Массив сообщений
-                    'My message'
-                ],
-                newMessage: ""                                  // Сообщение, которое ввёл пользователь
-            },
-            methods: {
-                addNewMessage: function () {                    // При клике на кнопку
-                    if (this.newMessage != "") {                // Если сообщение не пустое
-                        this.messages.push(this.newMessage);    // Добавляем в массив сообщение
-                        this.newMessage = "";                   // Очищаем значение нового сообщения
-                    }
-                }
-            }
-        });
-    </script>
+    <script src = "vue.js"></script>
 </body>
 
 </html>
